@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript массивдери: concat функциясы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            text-align: center;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .slide {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<script src="./app.js"></script>
+    <div class="container">
+        <h1>JavaScript массивдери: concat функциясы</h1>
+        <div id="slides">
+            <div class="slide active">
+                <h2>1. concat функциясы деген эмне?</h2>
+                <p>concat функциясы массивдерди бириктирүү үчүн колдонулат.</p>
+            </div>
+            <div class="slide">
+                <h2>2. Мисал</h2>
+                <pre><code>
+let array1 = [1, 2, 3];
+let array2 = [4, 5, 6];
+let combined = array1.concat(array2);
+console.log(combined); // [1, 2, 3, 4, 5, 6]
+
+                </code></pre>
+            </div>
+            <div class="slide">
+                <h2>3. Көп массивдерди бириктирүү</h2>
+                <pre><code>
+let array3 = [7, 8, 9];
+let combinedAll = array1.concat(array2, array3);
+console.log(combinedAll); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                </code></pre>
+            </div>
+            <div class="slide">
+                <h2>4. concat функциясынын өзгөчөлүктөрү</h2>
+                <ul>
+                    <li>Жаңы массив түзөт, мурунку массивдерди өзгөртпөйт.</li>
+                    <li>Ар кандай типтеги элементтерди бириктирүүгө мүмкүн.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>5. Колдонуу учурлары</h2>
+                <p>concat функциясы көбүнчө массивдерди бириктирүү, жаңы массивдер түзүү, жана маалыматтарды бириктирүү үчүн колдонулат.</p>
+            </div>
+            <div class="slide">
+                <h2>6. Эскертүү</h2>
+                <p>concat функциясы массивди өзгөртпөйт, бул функцияны колдонуу менен жаңы массив алууга болот.</p>
+            </div>
+        </div>
+        <button id="nextBtn">Кийинки</button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        });
+    </script>
+
+</body>
+</html>
